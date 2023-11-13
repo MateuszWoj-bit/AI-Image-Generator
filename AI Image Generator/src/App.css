@@ -1,42 +1,79 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #c62368;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Trebuchet MS", sans-serif;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header {
+  color: rgb(255, 255, 255);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  height: 150px;
 }
 
-.card {
-  padding: 2em;
+.input-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+input {
+  width: 100%;
+  min-width: 300px;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+  box-sizing: border-box;
+}
+#submit-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.images-section {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 15vh;
+}
+
+.image-container {
+  width: 48%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+}
+
+.image-container img {
+width: 100%;
 }
