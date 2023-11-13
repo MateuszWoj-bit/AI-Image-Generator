@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import MySVGComponent from "./svg";
 
@@ -44,9 +42,41 @@ const App = () => {
     },
   ]);
 
-  const getImages = async () => {
+ const getImages = async () => {
+   try {
+     let response;
+     let data;
 
-  };
+       const options = {
+         method: "POST",
+         headers: {
+           Authorization: `Bearer ${API_KEY}`,
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+           prompt: inputValue,
+           n: 1,
+           size: "1024x1024",
+         }),
+       };
+
+       response = await fetch(
+         "https://api.openai.com/v1/images/generations",
+         options
+       );
+         
+     data = await response.json();    
+     if (data.error) {
+       setGalleryItems([]);
+       return
+     }
+     setGalleryItems(data);
+   } catch (error) {
+    
+     console.error("Error fetching images:", error.message);
+   }
+ };
+
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -58,7 +88,6 @@ const App = () => {
       <header>
         <h1>AI Image Generator</h1>
       </header>
-
       <div className="gallery images-section">
         {galleryItems.map((item, index) => (
           <GalleryItem key={index} {...item} />
