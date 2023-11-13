@@ -1,8 +1,8 @@
 
 
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-color: #c62368;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,9 @@ body {
   align-items: center;
   font-family: "Trebuchet MS", sans-serif;
   overflow: hidden;
+  * {
+  box-sizing: border-box;
+}
 }
 
 header {
@@ -21,12 +24,14 @@ header {
   align-items: center;
   width: 100%;
   justify-content: center;
+  z-index: 2;
+  position: relative;
 }
+
 svg {
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: -10;
+  left: 0; 
 }
 
 .bottom-section {
@@ -72,8 +77,17 @@ input {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .image-container img {
-width: 100%;
+  display: block; 
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 15px; 
 }
+
+
