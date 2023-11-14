@@ -1,17 +1,23 @@
 import { useState } from "react";
 import "./App.css";
 import MySVGComponent from "./svg";
-
+import PropTypes from "prop-types";
 
 const API_KEY = "";
 
-const GalleryItem = ({ preview, url, description }) => (
+const GalleryItem = ({  url, description }) => (
   <div className="image-container">
     <a className="gallery__item" href={url}>
       <img className="gallery__image" src={url} alt={description} />
     </a>
   </div>
 );
+
+GalleryItem.propTypes = {
+  preview: PropTypes.string.isRequired, 
+  url: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
@@ -42,41 +48,38 @@ const App = () => {
     },
   ]);
 
- const getImages = async () => {
-   try {
-     let response;
-     let data;
+  const getImages = async () => {
+    try {
+      let response;
+      let data;
+      const options = {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: inputValue,
+          n: 1,
+          size: "1024x1024",
+        }),
+      };
 
-       const options = {
-         method: "POST",
-         headers: {
-           Authorization: `Bearer ${API_KEY}`,
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify({
-           prompt: inputValue,
-           n: 1,
-           size: "1024x1024",
-         }),
-       };
+      response = await fetch(
+        "https://api.openai.com/v1/images/generations",
+        options
+      );
 
-       response = await fetch(
-         "https://api.openai.com/v1/images/generations",
-         options
-       );
-         
-     data = await response.json();    
-     if (data.error) {
-       setGalleryItems([]);
-       return
-     }
-     setGalleryItems(data);
-   } catch (error) {
-    
-     console.error("Error fetching images:", error.message);
-   }
- };
-
+      data = await response.json();
+      if (data.error) {
+        setGalleryItems([]);
+        return;
+      }
+      setGalleryItems(data);
+    } catch (error) {
+      console.error("Error fetching images:", error.message);
+    }
+  };
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
