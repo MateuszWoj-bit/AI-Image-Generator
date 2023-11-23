@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 const apiKey = import.meta.env.VITE_REACT_APP_API_KEY || "";
 
 
-
 const GalleryItem = ({  url, description }) => (
   <div className="image-container">
     <a className="gallery__item" href={url}>
