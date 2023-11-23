@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import MySVGComponent from "./svg";
 import PropTypes from "prop-types";
+const apiKey = import.meta.env.VITE_REACT_APP_API_KEY || "";
 
-const API_KEY = "";
+
 
 const GalleryItem = ({  url, description }) => (
   <div className="image-container">
@@ -55,7 +56,7 @@ const App = () => {
       const options = {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

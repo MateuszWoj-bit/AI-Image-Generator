@@ -4,6 +4,9 @@ const submitIcon = document.querySelector("#submit-icon");
 const inputElement = document.querySelector("input");
 const imageSection = document.querySelector(".images-section");
 
+const apiUrl = process.env.REACT_APP_API_URL;
+console.log(apiUrl);
+
 const galleryItems = [
   {
     preview:
@@ -63,17 +66,14 @@ const getImages = async () => {
       )
       .join("");
     imageSection.insertAdjacentHTML("beforeend", markup);
-    
-      console.log("refresh")
-       var lightbox = new SimpleLightbox(".gallery a", {
-         captionDelay: 250,
-         captionsData: "alt",
-       });
 
-    
+    console.log("refresh");
+    var lightbox = new SimpleLightbox(".gallery a", {
+      captionDelay: 250,
+      captionsData: "alt",
+    });
   } catch (error) {
     console.error(error);
   }
 };
 submitIcon.addEventListener("click", getImages);
-
