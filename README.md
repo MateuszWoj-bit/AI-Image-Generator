@@ -24,7 +24,7 @@ Before using the app, make sure you have the following:
 3. **Set API Key:**
 - Create a .env file in the root of the project.
 - Add your OpenAI API key:
-   ```
+   ```js
    VITE_REACT_APP_API_KEY=api_key_here
 4. **Run the App:**
    ```bash
