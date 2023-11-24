@@ -24,5 +24,26 @@ Before using the app, make sure you have the following:
 3. **Set API Key:**
 - Create a .env file in the root of the project.
 - Add your OpenAI API key:
-```js
-VITE_REACT_APP_API_KEY=api_key_here
+   ```
+   VITE_REACT_APP_API_KEY=api_key_here
+4. **Run the App:**
+   ```bash
+   npm run dev
+5. **Open in Browser:**
+- Open your browser and navigate to http://localhost:3000 to view the app.
+
+## How to Use
+- Input Field:
+
+Enter a prompt or description in the text input field.
+This prompt will be used to generate an image.
+- Generate Images:
+
+Click on the submit icon (➢) to initiate the image generation process.
+View Generated Images:
+
+- The generated images will appear in the gallery section.
+## Sample Data:
+
+The app comes with sample data to display initial images.
+Feel free to replace the sample data in the galleryItems state with your own data.
