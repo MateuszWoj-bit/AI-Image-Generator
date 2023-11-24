@@ -25,4 +25,4 @@ Before using the app, make sure you have the following:
 - Create a .env file in the root of the project.
 - Add your OpenAI API key:
 ```js
-REACT_APP_API_KEY=your-api-key
+VITE_REACT_APP_API_KEY=api_key_here
