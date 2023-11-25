@@ -10,7 +10,7 @@ Before using the app, make sure you have the following:
 
 1. **Node.js:** Install Node.js on your machine.
 
-2. **OpenAI API Key:** Obtain an API key from OpenAI and set it in your environment variables with the name `REACT_APP_API_KEY`.
+2. **OpenAI API Key:** Obtain an API key from OpenAI and set it in your environment variables with the name `VITE_REACT_APP_API_KEY`.
 
 ## How to get OpenAI API Key
  
