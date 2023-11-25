@@ -12,6 +12,14 @@ Before using the app, make sure you have the following:
 
 2. **OpenAI API Key:** Obtain an API key from OpenAI and set it in your environment variables with the name `REACT_APP_API_KEY`.
 
+## How to get OpenAI API Key
+ 
+1. Visit the OpenAI website: Go to the OpenAI website at [https://www.openai.com/](https://platform.openai.com/signup)
+
+2. Navigate to the API section: Once logged in, navigate to the API section of the OpenAI platform.
+
+3. Apply for API access: Follow the instructions on the API page to apply for access. This might involve providing some information about how you intend to use the API and agreeing to OpenAI's terms of service.
+
 ## Getting Started
 
 1. **Clone the Repository:**
